@@ -60,13 +60,18 @@ function createPumpkin() {
     14: [1, 2, 3, 4, 12, 13, 14, 15],
     15: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15]
   }
+  let delay = 0
 
   for (let y = 1; y <= 15; y++) {
     for (let x = 1; x <= 15; x++) {
       if (lines[y].includes(x)) {
-        createBlock(x - 8, y - 8, colorB)
+        setTimeout(() => {
+          createBlock(x - 8, y - 8, colorB)
+        }, delay += 30)
       } else {
-        createBlock(x - 8, y - 8, colorY)
+        setTimeout(() => {
+          createBlock(x - 8, y - 8, colorY)
+        }, delay += 30)
       }
     }
   }
