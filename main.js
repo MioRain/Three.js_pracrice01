@@ -26,4 +26,10 @@ function init() {
   document.body.appendChild(renderer.domElement)
 }
 
+function render() {
+  requestAnimationFrame(render)
+  renderer.render(scene, camera)
+}
+
 init()
+render()
