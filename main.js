@@ -31,5 +31,15 @@ function render() {
   renderer.render(scene, camera)
 }
 
+function createBlock(x, y, color) {
+  const blockGeo = new THREE.BoxGeometry(1, 1, 1)
+  const blockMat = new THREE.MeshPhongMaterial({ color: color })
+  const block = new THREE.Mesh(blockGeo, blockMat)
+  block.position.set(x, y, 0)
+
+  scene.add(block)
+}
+
 init()
 render()
+createBlock(0, 0, 0xffffff)
